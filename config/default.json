@@ -1,3 +1,4 @@
 {
+    "mongoURI":"mongodb+srv://Alex:Alex884!@cluster0.uosla.mongodb.net/<dbname>?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken"
 }
