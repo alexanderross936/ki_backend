@@ -10,7 +10,7 @@ require('./models/Ingredient')
 require('./models/Recipe')
 require('./models/User')
 require('./config/default.json')
-const auth = require('./frontend/src/middleware/auth')
+const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
