@@ -321,9 +321,8 @@ app.post('/add_recipe', auth, async(req, res) => {
         res.status(500).send('Server Error.')
     }
 
-
 })
 
-app.listen(4000, () => {
-    console.log('App listening to you')
+app.listen(process.env.PORT || 4000, () => {
+    console.log('App listening on PORT 4000')
 })
