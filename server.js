@@ -14,14 +14,13 @@ const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
+const app = express();
 app.use(cors());
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-const app = express();
 
 
 app.use(express.json());
