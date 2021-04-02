@@ -11,16 +11,13 @@ const jwt = require('jsonwebtoken');
 require('./models/Ingredient')
 require('./models/Recipe')
 require('./models/User')
-require('./config/default.json')
+require('default.json')
 const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
-mongoose.connect(mongoURI, { useNewUrlParser: true });
-
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+var connectDB = require('./config/db')
+connectDB()
 
 const app = express();
 
