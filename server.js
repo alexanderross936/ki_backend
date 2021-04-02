@@ -1,6 +1,5 @@
 const express = require('express');
 var cors = require('cors')
-require('./config/default.json')
 const bcrypt = require('bcrypt')
 const config = require('config')
 const { check, validationResult } = require("express-validator");
@@ -17,6 +16,8 @@ const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
 var connectDB = require('./config/db')
+require('./config/default.json')
+
 connectDB()
 
 const app = express();
