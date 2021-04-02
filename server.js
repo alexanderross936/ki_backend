@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 require('./models/Ingredient')
 require('./models/Recipe')
 require('./models/User')
-require('default.json')
+require('./config/default.json')
 const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
