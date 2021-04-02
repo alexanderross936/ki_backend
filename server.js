@@ -14,7 +14,6 @@ const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
-
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 var db = mongoose.connection;
@@ -26,10 +25,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
 
 app.get('/user', auth, async(req, res) => {
     try {
