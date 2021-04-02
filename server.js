@@ -324,6 +324,8 @@ app.post('/add_recipe', auth, async(req, res) => {
 
 })
 
-app.listen(4000, () => {
-    console.log('App listening to you')
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config() }
+
+app.listen(process.env.PORT || 4000, () => {
+    console.log('App listening on PORT 4000')
 })
