@@ -10,7 +10,7 @@ require('./models/Ingredient')
 require('./models/Recipe')
 require('./models/User')
 require('./config/default.json')
-const auth = require('./auth')
+const auth = require('./frontend/src/middleware/auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
@@ -321,8 +321,9 @@ app.post('/add_recipe', auth, async(req, res) => {
         res.status(500).send('Server Error.')
     }
 
+
 })
 
-app.listen(process.env.PORT || 4000, () => {
-    console.log('App listening on PORT 4000')
+app.listen(4000, () => {
+    console.log('App listening to you')
 })
