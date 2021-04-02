@@ -1,10 +1,12 @@
 const express = require('express');
 var cors = require('cors')
+require('./config/default.json')
 const bcrypt = require('bcrypt')
 const config = require('config')
 const { check, validationResult } = require("express-validator");
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/one_database';
+// var mongoDB = 'mongodb://127.0.0.1/one_database';
+
 const jwt = require('jsonwebtoken');
 require('./models/Ingredient')
 require('./models/Recipe')
@@ -14,7 +16,7 @@ const auth = require('./auth')
 const User = require('./models/User');
 const Recipe = require('./models/Recipe');
 const Ingredient = require('./models/Ingredient');
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
